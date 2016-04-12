@@ -31,12 +31,12 @@
       attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
     }).addTo(map);
 
-    //get location using built-in modern browser location in HTML5
+    //get location on first load using built-in modern browser location in HTML5
     function onLocationFound(e) {
       var radius = (e.accuracy / 2) * 3.28084;
 
       L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " feet from this point").openPopup();
+        .bindPopup("You are within " + radius + " feet from this point. You can add the iframed google form here. This would be your lat/lng to populate the google form. Latitude: " + e.latlng.lat + "Longitude: " + e.latlng.lng).openPopup();
 
       L.circle(e.latlng, radius).addTo(map);
     }
