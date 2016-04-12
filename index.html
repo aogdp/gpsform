@@ -2,13 +2,9 @@
 <html>
 <head>
 	<title>GPS Form Example</title>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 	<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-
 	<script src="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-
 	<style>
 		body {
 			padding: 0;
@@ -20,16 +16,22 @@
 	</style>
 </head>
 <body>
-	<div id="map"></div>
+  <div id="map"></div>
 
-	<script>
-		var map = L.map('map');
+  <script>
+    var map = L.map('map');//Initialize the map
 
+    //Add a basemap
+    var esritopo = L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+    }).addTo(map);
+
+    //get location using built-in modern browser location in HTML5
 		function onLocationFound(e) {
-			var radius = e.accuracy / 2;
+			var radius = (e.accuracy / 2) * 3.28084;
 
 			L.marker(e.latlng).addTo(map)
-				.bindPopup("You are within " + radius + " meters from this point").openPopup();
+				.bindPopup("You are within " + radius + " feet from this point").openPopup();
 
 			L.circle(e.latlng, radius).addTo(map);
 		}
@@ -41,7 +43,21 @@
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
 
-		map.locate({setView: true, maxZoom: 16});
+		map.locate({setView: true, maxZoom: 22});
 	</script>
 </body>
 </html>
+
+
+<!--var tabletop = Tabletop.init( {
+  key: '1R_JHXTp1HZwuoDEOhBjTDlHqCv94lcbv2E26dRkDqbo',
+  simpleSheet: true,
+  parseNumbers: true,
+  callback: function(data, tabletop) {
+
+    //create a geojson out of the raw data with geojson.min
+    var projectsData = GeoJSON.parse(data, {'Point': 'point','Polygon': 'polygon', 'LineString': 'line'});
+   // console.log(projectsData);
+
+  },
+});-->
