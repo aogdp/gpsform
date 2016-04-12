@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <meta charset="utf-8">
   <title>GPS Form Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!--leaflet-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
+  <!--Location Plugin-->
+  <script src='https://cdn.jsdelivr.net/leaflet.locatecontrol/0.49.0/L.Control.Locate.min.js'></script>
+  <link href='https://cdn.jsdelivr.net/leaflet.locatecontrol/0.49.0/L.Control.Locate.css' rel='stylesheet' />
 
-    html,
-    body,
-    #map {
-      height: 100%;
-    }
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+  <style>
+    *{font-family: 'Source Sans Pro', sans-serif;}
+    #map {position:absolute;left: 0;top:60px; bottom:0; width:100%;}
+    .leaflet-popup-content {font-size: medium;}
   </style>
 </head>
 
 <body>
+  <div id="title">
+    <h2>This is a GPS Form Example</h2>
+  </div>
   <div id="map"></div>
 
   <script>
@@ -31,27 +34,12 @@
       attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
     }).addTo(map);
 
-    //get location on first load using built-in modern browser location in HTML5
-    function onLocationFound(e) {
-      var radius = (e.accuracy / 2) * 3.28084;
+    //Add Location Plugin
+    var loc = L.control.locate().addTo(map);
 
-      L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " feet from this point. You can add the iframed google form here. This would be your lat/lng to populate the google form. Latitude: " + e.latlng.lat + "Longitude: " + e.latlng.lng).openPopup();
+    //Endable Location
+    loc.start();
 
-      L.circle(e.latlng, radius).addTo(map);
-    }
-
-    function onLocationError(e) {
-      alert(e.message);
-    }
-
-    map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError);
-
-    map.locate({
-      setView: true,
-      maxZoom: 22
-    });
   </script>
 </body>
 
