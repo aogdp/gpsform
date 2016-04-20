@@ -1,8 +1,8 @@
 # GPS Form using Google Forms & Leaflet
 
-This is a simple web app that uses Google Forms and Leaflet to allow data collection using just a modern web browser and a GPS device, like a phone.
+This is a simple web app that uses Google Forms and Leaflet to allow data collection using just a modern web browser.
 
-![](https://raw.githubusercontent.com/aogdp/gpsform/gh-pages/gpsform.png)
+![](https://raw.githubusercontent.com/aogdp/gpsform/gh-pages/img/gpsform.png)
 
 ##Instructions
 
