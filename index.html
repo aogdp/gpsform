@@ -28,7 +28,7 @@
   <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
   <style>
     *{font-family: 'Source Sans Pro', sans-serif;}
-    #map {position:relative;height:500px;}
+    #map {position:relative;height:600px;}
     .leaflet-popup-content {font-size: medium;}
     .form-group{width:300px;}
     .form-control{resize:none;}
@@ -90,7 +90,7 @@
 
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
-        marker.openPopup({autoPanPaddingTopLeft: 200})
+        marker.openPopup()
       }, 100);
 
       marker.on('popupclose', function() {
