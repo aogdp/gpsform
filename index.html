@@ -41,10 +41,16 @@
   <script>
     var map = L.map('map'); //Initialize the map
 
+    var formId = '13E8CN8agdEA8M1m5gtP5zmAuKYGxJfQBU-hM2zkoRok';
+    var formLat = '284340177';
+    var formLng = '277741954';
+    var formText = '333827706';
+
     //Add a basemap
-    var esritopo = L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
-    }).addTo(map);
+    var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    	maxZoom: 19,
+    	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    });
 
     //Add Location Options - override the plugin default popup and circle
     var locOptions = {
@@ -91,7 +97,7 @@
             event.preventDefault();
             var descrip = $('#descrip').val();
             console.log(descrip);
-            $('#formdiv').html('<iframe src="https://docs.google.com/forms/d/13E8CN8agdEA8M1m5gtP5zmAuKYGxJfQBU-hM2zkoRok/formResponse?entry.284340177=' + lat + '&entry.277741954=' + lng + '&entry.333827706=' + descrip + '&submit=Submit" seamless scrolling="no" style="overflow:hidden;height:320px;border:lightgray solid thin;"></iframe>');
+            $('#formdiv').html('<iframe src="https://docs.google.com/forms/d/' + formId + '/formResponse?entry.' + formLat + '=' + lat + '&entry.' + formLng + '=' + lng + '&entry.'+ formText + '=' + descrip + '&submit=Submit" seamless scrolling="no" style="overflow:hidden;height:320px;border:lightgray solid thin;"></iframe>');
           });
       });
     }
