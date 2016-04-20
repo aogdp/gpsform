@@ -72,7 +72,7 @@
       var lat = e.latlng.lat;
       var lng = e.latlng.lng;
 
-      var form = '<div id="formdiv"><form role="form" id="projectform"><div class="form-group"><div class="form-group"><label for="description" class="requiredField">Please describe your feature.</label><textarea class="form-control" rows="4" id="descrip"></textarea></div><em>Click submit to add a point at this location.</em><hr /><div id="formHelp"></div><button type="submit" id="submit" class="btn btn-default">Submit</button></form></div>';
+      var form = '<div id="formdiv"><form role="form" id="projectform"><div class="form-group"><div class="form-group"><label for="description" class="requiredField">Please describe your feature.</label><textarea class="form-control" rows="4" id="descrip"></textarea></div><em>Click submit to add a point at this location.</em><div id="formHelp"></div><hr /><button type="submit" id="submit" class="btn btn-default">Submit</button></form></div>';
 
       if (e.accuracy) {
         var radius = (e.accuracy / 2) * 3.28084;
