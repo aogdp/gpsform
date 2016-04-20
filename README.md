@@ -11,6 +11,15 @@ This is a simple web app that uses Google Forms and Leaflet to allow data collec
 3. Connect you form resposnes to a spreadsheet.
 4. [Publish](https://support.google.com/docs/answer/37579?hl=en) your response sheet to the web.
 5. [Pre-fill](https://support.google.com/docs/answer/160000?hl=en) the form to get the appropriate variables for the app.
+
+```
+ var formId = 'Your Form Id';
+ var formLat = 'Longitude id form prefilled form';
+ var formLng = 'Latitude id from prefilled form';
+ var formText = 'Description id from prefilled form';
+ var gsheet = 'sheet id';
+```
+
 6. Upload the app to a webserver or just fork this repository and create a gh-pages branch.
 7. Start Collecting!
  
