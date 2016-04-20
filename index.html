@@ -96,8 +96,12 @@
         $('#projectform').submit(function(event) {
             event.preventDefault();
             var descrip = $('#descrip').val();
-            console.log(descrip);
-            $('#formdiv').html('<iframe src="https://docs.google.com/forms/d/' + formId + '/formResponse?entry.' + formLat + '=' + lat + '&entry.' + formLng + '=' + lng + '&entry.'+ formText + '=' + descrip + '&submit=Submit" seamless scrolling="no" style="overflow:hidden;height:375px;border:lightgray solid thin;"></iframe>');
+            if (!descrip) {
+              console.log(descrip);
+              $('#formdiv').html('<iframe src="https://docs.google.com/forms/d/' + formId + '/formResponse?entry.' + formLat + '=' + lat + '&entry.' + formLng + '=' + lng + '&entry.'+ formText + '=' + descrip + '&submit=Submit" seamless scrolling="no" style="overflow:hidden;height:375px;border:lightgray solid thin;"></iframe>');
+            } else {
+              $(#'formHelp').html('<span style="color:red;">Please enter a description of your point.</span>')
+            }
           });
       });
     }
