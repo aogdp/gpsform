@@ -12,7 +12,12 @@ This is a simple web app that uses Google Forms and Leaflet to allow data collec
 4. [Publish](https://support.google.com/docs/answer/37579?hl=en) your response sheet to the web.
 5. [Pre-fill](https://support.google.com/docs/answer/160000?hl=en) the form to get the appropriate variables for the app.
 
+The prefilled form will look something like this:
 ```
+https://docs.google.com/forms/d/long code here is the form id/viewform?entry.field1=-82&entry.field2=39&entry.field3=description
+```
+
+```javascript
  var formId = 'Your Form Id';
  var formLat = 'Longitude id form prefilled form';
  var formLng = 'Latitude id from prefilled form';
