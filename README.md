@@ -2,6 +2,8 @@
 
 This is a simple web app that uses Google Forms and Leaflet to allow data collection using just a modern web browser and a GPS device, like a phone.
 
+![](https://raw.githubusercontent.com/aogdp/gpsform/gh-pages/gpsformimg.png)
+
 ##Instructions
 
 1. [Dowload](https://github.com/aogdp/gpsform/archive/gh-pages.zip) the app.
