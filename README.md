@@ -16,6 +16,7 @@ This is a simple web app that uses Google Forms and Leaflet to allow data collec
  
 ##Enhancements
 Could be added but I wanted to keep this app as simple as possible.
+
 1. Add styling using Awesome Markers, Maki Markers or other plugins.
 2. Add search.
 3. More basemaps.
