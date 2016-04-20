@@ -16,7 +16,7 @@ The prefilled form will look something like this:
 ```
 https://docs.google.com/forms/d/formId/viewform?entry.field1=39.01&entry.field2=-81.26&entry.field3=description
 ```
-
+These are the variables you need to change in index.html:
 ```javascript
  var formId = 'Your Form Id';
  var formLat = 'Longitude id form prefilled form';
@@ -24,9 +24,9 @@ https://docs.google.com/forms/d/formId/viewform?entry.field1=39.01&entry.field2=
  var formText = 'Description id from prefilled form';
  var gsheet = 'sheet id';
 ```
-
 6. Upload the app to a webserver or just fork this repository and create a gh-pages branch.
-7. Start Collecting!
+7. You may also want to change the meta tags at the beginning of the page to reflect your app.
+9. Start Collecting!
  
 ##Enhancements
 Could be added but I wanted to keep this app as simple as possible.
