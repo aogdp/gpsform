@@ -14,7 +14,7 @@ This is a simple web app that uses Google Forms and Leaflet to allow data collec
 
 The prefilled form will look something like this:
 ```
-https://docs.google.com/forms/d/long code here is the form id/viewform?entry.field1=-82&entry.field2=39&entry.field3=description
+https://docs.google.com/forms/d/long code here is the form id/viewform?entry.field1=39.01&entry.field2=-81.26&entry.field3=description
 ```
 
 ```javascript
