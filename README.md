@@ -14,7 +14,8 @@ This is a simple web app that uses Google Forms and Leaflet to allow data collec
 6. Upload the app to a webserver or just fork this repository on GitHub and create a gh-pages repository so it will be live on the web.
 7. Start Collecting!
  
-###Enhancements - Could be added but I wanted to keep this app as simple as possible.
+##Enhancements
+Could be added but I wanted to keep this app as simple as possible.
 1. Add styling using Awesome Markers, Maki Markers or other plugins.
 2. Add search.
 3. More basemaps.
