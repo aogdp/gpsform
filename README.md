@@ -21,6 +21,6 @@ Could be added but I wanted to keep this app as simple as possible.
 2. Add search.
 3. More basemaps.
 5. Layer selector.
-6. Figure out a way to collect pictures taken with the device, and push that url to the google sheet. This would take much more coding than is in the initial app and will likely not happen. I suggest this be accomplished manually.
+6. Figure out a way to collect pictures taken with the device, and push that url to the google sheet. This would take much more coding than is in the initial app. I suggest this be accomplished manually.
 
 
