@@ -111,6 +111,13 @@
             }
           });
       });
+      if (marker) {
+        marker.on('popupclose', function() {
+          map.removeLayer(marker);
+          map.removeLayer(circle);
+          loc.stop();
+        });
+      }
     }
 
 
@@ -139,12 +146,7 @@
       }
     });
 
-    marker.on('popupclose', function() {
-      map.removeLayer(marker);
-      map.removeLayer(circle);
-      loc.stop();
-    });
-
+    //Add form response points
     //Add an empty geojson layer for the google sheet points and create the popup
     var gps = new L.geoJson(null, {
       onEachFeature: function(feature, layer) {
