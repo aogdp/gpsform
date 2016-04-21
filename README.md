@@ -19,7 +19,7 @@ https://docs.google.com/forms/d/formId/viewform?entry.field1=39.01&entry.field2=
 These are the variables you need to change in index.html:
 ```javascript
  var formId = 'Your Form Id';
- var formLat = 'Longitude id form prefilled form';
+ var formLat = 'Longitude id from prefilled form';
  var formLng = 'Latitude id from prefilled form';
  var formText = 'Description id from prefilled form';
  var gsheet = 'sheet id';
