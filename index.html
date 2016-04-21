@@ -95,7 +95,8 @@
       
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
-        marker.openPopup()
+        marker.openPopup();
+        loc.stop();
       }, 100);
 
       marker.on('popupopen', function() {
@@ -117,7 +118,6 @@
           if (map.hasLayer(circle)) {
             map.removeLayer(circle);
           }
-          loc.stop();
         });
       }
     }
@@ -125,7 +125,6 @@
 
     map.on('locationfound', function(e) {
       collectData(e);
-      loc.stop();
     });
     
   setTimeout(function() {
