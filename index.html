@@ -74,7 +74,7 @@
     //Add Location
     var loc = L.control.locate(locOptions).addTo(map);
 
-    //Endable Location and do things once the location is found
+    //Endable Location at page load and do things once the location is found
     loc.start();
 
     var marker, circle, lat, lng; //create variables used throughout the map
@@ -91,8 +91,8 @@
         circle = L.circle(e.latlng, radius).addTo(map);
       }
       marker = L.marker(e.latlng).addTo(map)
-        .bindPopup(form, {maxWidth:400});
-
+      .bindPopup(form, {maxWidth:400});
+      
       //if you try and open the popup right away the location may not be ready, eventhough it's firing after locationfound
       setTimeout(function() {
         marker.openPopup()
@@ -114,7 +114,9 @@
       if (marker) {
         marker.on('popupclose', function() {
           map.removeLayer(marker);
-          map.removeLayer(circle);
+          if (map.hasLayer(circle)) {
+            map.removeLayer(circle);
+          }
           loc.stop();
         });
       }
@@ -143,6 +145,9 @@
     map.on('stopfollowing', function() {
       if (marker) { 
         marker.closePopup();
+      }
+      if map.hasLayer(circle) {
+        map.removeLayer(circle)
       }
     });
 
