@@ -126,10 +126,12 @@
     if(lat) {
       return false;
     }else{
+      console.log('no loc');
       loc.stop();
+      map.setView([-82,39], 10);
       alert('No location found')
     }
-    }, 2000);
+    }, 1000);
 
     map.on('click', function(e) {
       collectData(e);
