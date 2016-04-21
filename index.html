@@ -98,12 +98,6 @@
         marker.openPopup()
       }, 100);
 
-      marker.on('popupclose', function() {
-        map.removeLayer(marker);
-        map.removeLayer(circle);
-        loc.stop();
-      });
-
       marker.on('popupopen', function() {
         $('#projectform').submit(function(event) {
             event.preventDefault();
@@ -143,6 +137,12 @@
       if (marker) { 
         marker.closePopup();
       }
+    });
+
+    marker.on('popupclose', function() {
+      map.removeLayer(marker);
+      map.removeLayer(circle);
+      loc.stop();
     });
 
     //Add an empty geojson layer for the google sheet points and create the popup
