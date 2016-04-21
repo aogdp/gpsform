@@ -124,6 +124,7 @@
 
 
     map.on('locationfound', function(e) {
+      loc.stop();
       collectData(e);
     });
     
